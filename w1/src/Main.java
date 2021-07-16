@@ -17,7 +17,7 @@ public class Main {
             If S = 0, display "0:0:0" 
             If S = 1, display "0:0:1" 
             If S = 60, display "0:1:0" 
-            If S = 3600, display "1:0:0" 
+            If S = 3600, display "1:0:0"
             If S = 3661, display "1:1:1" 
         S is given by users from the keyboard (hint: use java.util.Scanner class)*/
         Exercise_3.exe();
@@ -32,4 +32,6 @@ public class Main {
         /*There are 2 circles. The x, y coordinates of the circles' centers as well as the circles'  radiuses are entered by users. Determine if 2 circles intersect.*/
         Exercise_5.exe();
     }
+
+
 }
