@@ -3,7 +3,7 @@ import java.util.Random;
 public class Array_String {
 
     public static void main(String[] args) {
-        
+        e6_7();
     }
 
 
@@ -206,4 +206,121 @@ public class Array_String {
         return numbers;
     }
       
+
+
+//caro 3*3
+    //DISPLAY THE GAME
+    public static void displayGame(char[][] board) {
+        for(char[] row : board) {
+            System.out.print("|");
+            for (char cell : row){
+                System.out.printf(" %c |",cell);
+                
+            }
+            System.out.print("\n");
+            System.out.print("\n");
+        }
+        System.out.println("");
+    }
+
+    //END THE GAME
+    public static char endGame(char[][] board) {
+
+        // ASSIGNING PLAYER TO X AND O
+        char[] players_list = {'X', 'O'};
+        for (char player : players_list){
+            //horizon and vertical checked
+            for (int row = 0; row < board[0].length; row++) {
+                if (board[row][0] == player &&
+                    board[row][1] == player &&
+                    board[row][2] == player) {
+                    return player;
+                }
+            }
+
+            for (int col = 0; col < board[0].length; col++) {
+                if (board[0][col] == player &&
+                    board[1][col] == player &&
+                    board[2][col] == player) {
+                    return player;
+                }
+            }
+
+            //diagonal checked
+            if (board[0][0] == player &&
+                board[1][1] == player &&
+                board[2][2] == player) {
+                return player;
+            }
+
+            if (board[0][2] == player &&
+                board[1][1] == player &&
+                board[2][0] == player) {
+                return player;
+            }
+
+
+            //check if there is at least 1 empty cell(the dot means empty), the game can continue
+
+            for (int row=0; row < board[0].length; row++) {
+                for (int col=0; col < board.length; col++){
+                    if(board[row][col]==' '){
+                        return ' ';
+                    }
+                }
+            }
+        }
+        return 'C';
+    }
+
+
+    public static void e6_7() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the size of your caro board: ");
+        System.out.print("Row = ");
+        int row = s.nextInt();
+        System.out.print("Column = ");
+        int col = s.nextInt();
+        System.out.println("");
+
+        char[][] board = new char[row][col];
+        for (row=0; row<board[0].length; row++) {
+            
+            for(col=0; col<board.length; col++) {
+                board[row][col] = ' ';
+            }
+        }
+        
+        displayGame(board);
+        
+        char[] players_list = {'O','X'};
+        int playerturn = (int) Math.random()*players_list.length;
+        char fin = endGame(board);
+        while (fin == ' '){
+            System.out.println("Current game: ");
+            displayGame(board);
+            playerturn = (playerturn + 1) % players_list.length;
+            //announcement 
+            System.out.printf("Current player is: %c\n", players_list[playerturn]);
+            //accept position that play want to choose
+            System.out.print("Choose the number from 0-2 for a row:");
+            row = s.nextInt();
+            System.out.print("Choose the number from 0-2 for a column:");
+            col = s.nextInt();
+            board[row][col] = players_list[playerturn];
+
+
+            //check fininsh
+            fin = endGame(board);
+        }
+
+        if (fin == 'C') {
+            System.out.println("Game is tie: ");
+        } else {
+            System.out.println(players_list[playerturn] + " wins the game!");
+        }
+
+        s.close();
+    }
+
 }
