@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e583b8a1-09a5-4ecf-a08b-d555732ebcfb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../w3/src/Exercise_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../w3/src/Exercise_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../w3/src/Exercise_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../w3/src/Exercise_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../w3/src/Exercise_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../w3/src/Exercise_3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../w3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../w3/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../w3/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../w3/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../w4/src/OOP.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +36,7 @@
       <option name="presentableId" value="Default" />
       <updated>1626113896179</updated>
       <workItem from="1626113900287" duration="130000" />
+      <workItem from="1627752370013" duration="133000" />
     </task>
     <servers />
   </component>

@@ -206,10 +206,6 @@ public class Solution {
     sc.close();
   }
 
-
-
-
-
   // exercise 8
   public static boolean isPossible(String msg, String yourName) {
     // recursive method demonstration
