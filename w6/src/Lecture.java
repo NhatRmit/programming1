@@ -33,18 +33,15 @@ public class Lecture {
         Cake c  = new Cake("Pie", 20.5);
         cakeOut.writeObject(c);
 
-
         //get Cake from file
         FileInputStream of1 = new FileInputStream("cakes.obj");
         ObjectInputStream cakeIn = new ObjectInputStream(of1);
         Cake c1 = (Cake)cakeIn.readObject();
         System.out.println(c1);
 
-
         //Get the file from directory
         File current = new File(".");
         display(current, 0);
-        
     }
 
     static void display(File current, int level){

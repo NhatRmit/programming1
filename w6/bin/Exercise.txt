@@ -1,0 +1,23 @@
+File I/O
+
+Exercise 1
+
+Create a program asking users for their names, addresses, and ages. Write all users' entered information to a text file "users.txt". If the users.txt file has not existed yet, create it. If it has existed already, append new data to it (in other words, don't overwrite the existing data).
+
+Exercise 2
+
+Create another program to read data from users.txt file.
+
+Can you run the 2 programs created in Exercise 1 and Exercise 2 at the same time?
+
+Exercise 3
+
+You need to create a Student class to store student information. Each student instance consists of a name (String), major (String), and GPA (double). Implement a program to create Student instances and write those instances into a file named "students.obj".
+
+Exercise 4
+
+Implement another program to read student instances back from "students.obj" file.
+
+Exercise 5
+
+Implement a program that displays all folder and file names under the current directory (i.e., the directory that your Java program is in). For a directory, display its sub-directories and files recursively. For each nested directory, increase the number of spaces on the left of the displayed String by 4. Use "<" and ">" around directories to differentiate them from files
