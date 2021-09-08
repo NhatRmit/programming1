@@ -1,0 +1,151 @@
+Inheritance
+
+Exercise 1
+
+Now, we need to display the recipes to viewers. Create a class RecipeDisplay. This class is responsible for displaying recipe information. After doing market research, you know that there are 3 attractive ways to display one recipe object:
+
+· For casual viewers, display the recipe components in the recipe in any order. In other words, you just need to iterate the RecipeComponent array list and display the components in that order. Name it RecipeCasualDisplay
+
+· For serious viewers, display the recipe components in the recipe based on the sorted order of amount values. In other words, the component with smallest 'amount' value must be displayed first. Name it RecipeSeriousDisplay
+
+· For hackers (like us), display the recipe components in the recipe based on the sorted order of the first digit of 'amount' values. In other words, the recipe component whose amount is 123 must be displayed before another recipe component whose amount value is 99. Name it RecipeHackerDisplay
+
+Implement the parent class RecipeDisplay and the child classes RecipeCasualDisplay, RecipeSeriousDisplay, and RecipeHackerDisplay according to the specifications.
+
+Implement a simple program to demonstrate those classes. You can create objects directly in your code (that means you don't need to ask users to enter data).
+
+To ensure everyone uses the same basic classes, we will use the following code for Ingredient, RecipeComponent, and RecipeDisplay. You only need to provide the specific implementation.
+
+package week8;
+
+import java.util.ArrayList;
+
+public class Exercise {
+
+}
+
+class RecipeDisplay {
+
+ArrayList<RecipeComponent> components;
+
+public RecipeDisplay() {
+
+components = new ArrayList<RecipeComponent>();
+
+}
+
+public void addComponent(RecipeComponent rc) {
+
+// add one recipe component object into the array list
+
+}
+
+public void display() {
+
+System.out.println("I don't know how to display");
+
+}
+
+}
+
+class RecipeComponent {
+
+Ingredient ing;
+
+double amount;
+
+public RecipeComponent(Ingredient ing, double amount) {
+
+this.ing = ing;
+
+this.amount = amount;
+
+}
+
+public String toString() {
+
+return (ing.toString() + " - " + amount);
+
+}
+
+}
+
+class Ingredient {
+
+String name;
+
+String measurement;
+
+public Ingredient(String n, String m) {
+
+name = n;
+
+measurement = m;
+
+}
+
+public String toString() {
+
+return String.format("%s %s", name, measurement);
+
+}
+
+}
+
+Hint: to sort objects, you can use the ArrayList.sort() method. In this method call, you provide a Comparator object. The comparator object is responsible for determining which object in the array list is bigger than other according to its own rule.
+
+The comparator must implement the Comparator interface. For now, that means you need to implement the method compare() that returns a positive, negative, or zero (integer). The return value decides if the first object is greater, smaller, or equal to the second object respectively.
+
+For example, assume you have a class Student. And you want to sort students based on their gpa. You can use the sample code below
+
+class Student {
+
+public String studentName;
+
+public double gpa;
+
+}
+
+class StudentByGPA implements Comparator<Student> {
+
+public int compare(Student s1, Student s2) {
+
+if (s1.gpa < s2.gpa) {
+
+return -1;
+
+}
+
+if (s1.gpa > s2.gpa) {
+
+return 1;
+
+}
+
+return 0;
+
+}
+
+}
+
+If you have an array list students pointed to by the variable 'students', you can sort them as
+
+students.sort(new StudentByGPA());
+
+Exercise 2
+
+After doing another market research (yes, you have a big budget for market research), you learn that for each type of users, there are 3 preferred ways to separate the recipe components when displaying them:
+
+· Space separator: use a blank line to separate 2 recipe components
+
+· Dash separator: use an all-dashed line (i.e., -------) to separate 2 recipe components
+
+· Binary separator: use '0' and '1' digits alternatively (i.e., 010101) to separate 2 recipe components
+
+How can you extend the code in exercise 1 to include the new requirements?
+
+You can implement 9 child classes (3 types of users x 3 types of separators), but it is a lot of work.
+
+Can you update the parent class RecipeDisplay to accept a Separator object? Then extend the Separator to some child classes? Use the diagram below to think about that technique
+
+After doing those exercises, you can see that OOP can help you manage the changes/new requirements easier. Even though you can use IF statements for the above exercises, it's very difficult to update all the IF logic when there are many new/updated requirements.
