@@ -1,0 +1,27 @@
+We will extend the previous exercises this week.
+
+There is no booking in general. A booking must be of a specific type: Western or Other. How can you modify your existing classes to enforce this rule?
+
+Hint: use abstract classes
+
+Exercise 2
+
+The government want to collect taxes from your business. In particular, all bookings, except SocialBooking (explained later), are taxed. The tax percent is 10% for WesternBooking and 15% for OtherBooking. The tax amount is calculated based on the total booking amount before applying discounts and tips.
+
+SocialBooking is a special kind of booking that is used in charity events. There is no tax (but you can have discounts and tips) for special bookings. (You can freely decide what you want to calculate tips for social bookings)
+
+Create a Taxable interface (you cannot use abstract class because multiple inheritance is not possible in Java, and your classes have a common parent, which is Booking, already). There is only one method in this interface: calculateTax(). You should implement this method appropriately in your WesternBooking and OtherBooking classes.
+
+Now, provided a list of bookings, can you write a loop to get the total tax?
+
+Hint: use instance of
+
+Exercise 3 (*)
+
+Create an abstract class DataDisplay. This class has 2 methods
+
+- addDataPoint(String groupLabel, int value)
+
+- display()
+
+You can implement the addDataPoint() method in the DataDisplay class (you can use an array list to maintain a list of data points). But the display() method should be implemented in specific child classes (because you don't know how to display data in general). In particular, create 2 child classes: TabularDisplay and ChartDisplay and implement display() accordingly.

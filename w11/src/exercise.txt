@@ -1,0 +1,37 @@
+Exercise 1
+
+Write a program that asks users to enter a file name. Then, read the content of this file (assume this file is in the same directory as your Java program) and output it to the console.
+
+If the file does not exist, your program should inform users and ask them to enter a new name. Repeat the process as many times as needed to get at least one file correctly.
+
+You should use exception handling to solve this exercise.
+
+Exercise 2
+
+Implement a method getIntFromUser(int default) that asks users to enter an integer and return that value. If the entered value is not valid, return the provided parameter instead.
+
+You should use exception handling to solve this exercise.
+
+Exercise 3
+
+Create an abstract class Animal with one abstract method void makeSound().
+
+Create 2 child classes: Dog and Cat. The makeSound() method of the Dog class prints "woof" to the console while the makeSound() method of the Cat class prints "meow" to the console.
+
+Create a client method Dog treatMeAsDog(Animal a). In this method, cast the Animal parameter a into a Dog and return it. If the cast is unsuccessful, you should display a message "Impossible" and return null instead.
+
+You are not allowed to use the "instance of" operator in this exercise. You should use exception handling to solve this exercise instead.
+
+Exercise 4
+
+Create an exception class: RMITException.
+
+Create 2 child classes of RMITException: CourseException and MarkException.
+
+Create a class RMITStudent. An RMITStudent object has 2 attributes: name (String) and marks (Map collection). Each element of marks is a pair of <String, Integer>, in which the String key represents a course code and the Integer value represents the score of that course.
+
+Implement a method void updateCourse(String code, int mark) for the RMITStudent class. If the parameter code exists as a key in the student object's marks attribute already, update the value of that key to the mark parameter. Otherwise, add a new pair with the provided parameters <code, mark> to the marks attribute.
+
+In the updateCourse() method, if the number of added courses is greater than 3, throw a CourseException object with an appropriate message. If the mark parameter is less than zero or greater than 100, throw a MarkException object with an appropriate message.
+
+Implement a client code that uses RMITException, CourseException, MarkException, and RMITStudent to create a student and add/update courses to that student.
